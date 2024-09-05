@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 37px;
 `;
 
 export const Title = styled.h2`

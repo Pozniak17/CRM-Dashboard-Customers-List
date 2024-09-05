@@ -1,6 +1,6 @@
 import { CiDiscount1 } from "react-icons/ci";
 import { IoWalletOutline } from "react-icons/io5";
-import { Item, Link, List, Wrapper } from "./NavList.styled";
+import { Item, Link, List, Wrapper } from "./NavList.module";
 import { TbUserSquareRounded } from "react-icons/tb";
 import { PiCubeFocusLight } from "react-icons/pi";
 import { PiKey } from "react-icons/pi";
