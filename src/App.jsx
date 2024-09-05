@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import SideBar from "./components/Sidebar/SideBar/Sidebar";
+import SideBar from "./components/Sidebar/SideBar/SideBar.jsx";
 import { Layout } from "./App.module";
 import Customers from "./pages/Customers/Customers";
 

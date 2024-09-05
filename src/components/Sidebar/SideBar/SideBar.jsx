@@ -1,6 +1,6 @@
 import Logo from "../Logo/Logo";
 import MenuList from "../NavList/NavList.jsx";
-import { Container } from "./Sidebar.module.js";
+import { Container } from "./SideBar.module.js";
 
 export default function SideBar() {
   return (
