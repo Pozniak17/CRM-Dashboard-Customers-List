@@ -101,7 +101,7 @@ export default function TableSection({ data, onHandle, currentPage }) {
             <li key={pageNumber}>
               <Button
                 onClick={() => handlePageClick(pageNumber)}
-                isActive={pageNumber === currentPage ? "active" : ""}
+                $isActive={pageNumber === currentPage ? "active" : ""}
               >
                 {pageNumber}
               </Button>
@@ -113,7 +113,7 @@ export default function TableSection({ data, onHandle, currentPage }) {
           <li>
             <Button
               onClick={() => handlePageClick(13)}
-              isActive={13 === currentPage ? "active" : ""}
+              $isActive={13 === currentPage ? "active" : ""}
             >
               13
             </Button>

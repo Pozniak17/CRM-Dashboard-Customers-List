@@ -8,5 +8,4 @@ export const Container = styled.header`
   padding-left: 28px;
   padding-right: 28px;
   width: 306px;
-  height: 1198px;
 `;

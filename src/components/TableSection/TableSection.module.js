@@ -155,13 +155,13 @@ export const BottomList = styled.ul`
 
 export const Button = styled.button`
   background: ${(props) =>
-    props.disabled ? "#d3d3d3" : props.isActive ? "#5932ea" : "#f5f5f5"};
+    props.disabled ? "#d3d3d3" : props.$isActive ? "#5932ea" : "#f5f5f5"};
   color: ${(props) =>
-    props.disabled ? "#a9a9a9" : props.isActive ? "#fff" : "#404b52"};
+    props.disabled ? "#a9a9a9" : props.$isActive ? "#fff" : "#404b52"};
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   border: 1px solid
     ${(props) =>
-      props.disabled ? "#eee" : props.isActive ? "#5932ea" : "#eee"};
+      props.disabled ? "#eee" : props.$isActive ? "#5932ea" : "#eee"};
   padding: 6px 9px;
   border-radius: 4px;
   font-size: 12px;
@@ -171,11 +171,11 @@ export const Button = styled.button`
 
   &:hover {
     color: ${(props) =>
-      props.disabled ? "#a9a9a9" : props.isActive ? "#fff" : "#fff"};
+      props.disabled ? "#a9a9a9" : props.$isActive ? "#fff" : "#fff"};
     background: ${(props) =>
-      props.disabled ? "#d3d3d3" : props.isActive ? "#5932ea" : "#5932ea"};
+      props.disabled ? "#d3d3d3" : props.$isActive ? "#5932ea" : "#5932ea"};
     border: 1px solid
       ${(props) =>
-        props.disabled ? "#eee" : props.isActive ? "#5932ea" : "#5932ea"};
+        props.disabled ? "#eee" : props.$isActive ? "#5932ea" : "#5932ea"};
   }
 `;
