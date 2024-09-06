@@ -1,10 +1,14 @@
 import { GoSearch } from "react-icons/go";
 import { FaChevronDown } from "react-icons/fa";
-
+import { FaChevronLeft } from "react-icons/fa6";
+import { FaChevronRight } from "react-icons/fa6";
 import {
   AccentFirst,
   AccentSecond,
-  Button,
+  BottomList,
+  BottomSection,
+  BottomText,
+  SortButton,
   Container,
   FilterWrapper,
   IconWrapper,
@@ -18,6 +22,7 @@ import {
   Title,
   TitleWrapper,
   Wrapper,
+  Button,
 } from "./TableSection.module";
 
 export default function TableSection({ data }) {
@@ -37,11 +42,11 @@ export default function TableSection({ data }) {
             <Input type="text" placeholder="Search" />
           </InputContainer>
 
-          <Button>
+          <SortButton>
             <AccentFirst>Short by : </AccentFirst>
             <AccentSecond>Newest</AccentSecond>
             <FaChevronDown />
-          </Button>
+          </SortButton>
         </FilterWrapper>
       </Wrapper>
 
@@ -71,6 +76,40 @@ export default function TableSection({ data }) {
           ))}
         </tbody>
       </Table>
+
+      <BottomSection>
+        <BottomText>Showing data 1 to 8 of 256K entries</BottomText>
+        <BottomList>
+          <li>
+            <Button>
+              <FaChevronLeft width="8px" height="12px" />
+            </Button>
+          </li>
+          <li>
+            <Button>1</Button>
+          </li>
+          <li>
+            <Button>2</Button>
+          </li>
+          <li>
+            <Button>3</Button>
+          </li>
+          <li>
+            <Button>4</Button>
+          </li>
+          <li>
+            <span>...</span>
+          </li>
+          <li>
+            <Button>40</Button>
+          </li>
+          <li>
+            <Button>
+              <FaChevronRight width="8px" height="12px" />
+            </Button>
+          </li>
+        </BottomList>
+      </BottomSection>
     </Container>
   );
 }

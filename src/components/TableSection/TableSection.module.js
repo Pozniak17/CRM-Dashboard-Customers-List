@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.section`
   padding-left: 38px;
   padding-right: 44px;
   outline: 1px solid red;
   border-radius: 18px;
   background-color: #fff;
   width: 968px;
-  height: 812px;
+  min-height: 812px;
 `;
 
 export const Wrapper = styled.div`
@@ -64,7 +64,7 @@ export const Input = styled.input`
   letter-spacing: -0.12px;
 `;
 
-export const Button = styled.button`
+export const SortButton = styled.button`
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -109,6 +109,11 @@ export const TableItem = styled.td`
   padding-top: 24px;
   padding-bottom: 24px;
   border-bottom: 1px solid #eee;
+
+  color: #292d32;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.14px;
 `;
 
 export const StatusItem = styled.span`
@@ -126,4 +131,44 @@ export const StatusItem = styled.span`
   color: ${(props) => (props.status === "Active" ? "#008767" : "#DF0404")};
   border: ${(props) =>
     props.status === "Active" ? "1px solid #00B087" : "1px solid #DF0404;"};
+`;
+
+export const BottomSection = styled.div`
+  margin-top: 30px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const BottomText = styled.p`
+  color: #b5b7c0;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.14px;
+`;
+
+export const BottomList = styled.ul`
+  list-style: none;
+  display: flex;
+  gap: 12px;
+`;
+
+export const Button = styled.button`
+  color: #404b52;
+  background: #f5f5f5;
+  padding: 6px 9px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 100%; /* 12px */
+  letter-spacing: -0.12px;
+  cursor: pointer;
+
+  &:hover {
+    color: #fff;
+    background: #5932ea;
+    border-radius: 4px;
+    border: 1px solid #5932ea;
+  }
 `;
