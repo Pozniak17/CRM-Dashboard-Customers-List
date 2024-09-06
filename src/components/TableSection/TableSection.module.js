@@ -20,7 +20,7 @@ export const TitleWrapper = styled.div`
 `;
 
 export const FilterWrapper = styled.div`
-  margin-top: 44px;
+  padding-top: 44px;
   display: flex;
   gap: 16px;
 `;
@@ -111,8 +111,7 @@ export const TableItem = styled.td`
   border-bottom: 1px solid #eee;
 `;
 
-export const StatusItem = styled.td`
-  margin-top: 20px;
+export const StatusItem = styled.span`
   width: 80px;
   padding: 4px 12px;
   display: flex;
@@ -122,7 +121,6 @@ export const StatusItem = styled.td`
   letter-spacing: -0.14px;
   border-radius: 4px;
   align-items: center;
-  gap: 10px;
   background-color: ${(props) =>
     props.status === "Active" ? "rgba(22, 192, 152, 0.38)" : "#FFC5C5"};
   color: ${(props) => (props.status === "Active" ? "#008767" : "#DF0404")};
