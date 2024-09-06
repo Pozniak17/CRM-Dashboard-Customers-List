@@ -69,8 +69,8 @@ export default function TableSection({ data }) {
               <TableItem>{item.phone}</TableItem>
               <TableItem>{item.email}</TableItem>
               <TableItem>{item.country}</TableItem>
-              <TableItem status={item.status}>
-                <StatusItem>{item.status}</StatusItem>
+              <TableItem>
+                <StatusItem status={item.status}>{item.status}</StatusItem>
               </TableItem>
             </tr>
           ))}
