@@ -25,7 +25,19 @@ import {
   Button,
 } from "./TableSection.module";
 
-export default function TableSection({ data }) {
+export default function TableSection({ data, onHandle, currentPage }) {
+  const nextPage = () => {
+    onHandle((prevState) => prevState + 1);
+  };
+
+  const prevPage = () => {
+    onHandle((prevState) => prevState - 1);
+  };
+
+  const handlePageClick = (pageNumber) => {
+    onHandle(pageNumber);
+  };
+
   return (
     <Container>
       <Wrapper>
@@ -81,22 +93,17 @@ export default function TableSection({ data }) {
         <BottomText>Showing data 1 to 8 of 256K entries</BottomText>
         <BottomList>
           <li>
-            <Button>
+            <Button onClick={prevPage} disabled={currentPage === 1}>
               <FaChevronLeft width="8px" height="12px" />
             </Button>
           </li>
-          <li>
-            <Button>1</Button>
-          </li>
-          <li>
-            <Button>2</Button>
-          </li>
-          <li>
-            <Button>3</Button>
-          </li>
-          <li>
-            <Button>4</Button>
-          </li>
+          {[1, 2, 3, 4].map((pageNumber) => (
+            <li key={pageNumber}>
+              <Button onClick={() => handlePageClick(pageNumber)}>
+                {pageNumber}
+              </Button>
+            </li>
+          ))}
           <li>
             <span>...</span>
           </li>
@@ -104,7 +111,7 @@ export default function TableSection({ data }) {
             <Button>40</Button>
           </li>
           <li>
-            <Button>
+            <Button onClick={nextPage}>
               <FaChevronRight width="8px" height="12px" />
             </Button>
           </li>

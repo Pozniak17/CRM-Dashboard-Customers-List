@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 
 export default function Customers() {
   const [users, setUsers] = useState([]);
+  const [page, setPage] = useState(1);
   console.log(users);
 
   useEffect(() => {
@@ -16,7 +17,7 @@ export default function Customers() {
         {
           params: {
             limit: 8,
-            page: 1,
+            page,
           },
         }
       );
@@ -25,13 +26,13 @@ export default function Customers() {
     }
 
     fetchUsers();
-  }, []);
+  }, [page]);
 
   return (
     <Container>
       <TopBar />
       <Statistic />
-      <TableSection data={users} />
+      <TableSection data={users} onHandle={setPage} currentPage={page} />
     </Container>
   );
 }

@@ -154,21 +154,21 @@ export const BottomList = styled.ul`
 `;
 
 export const Button = styled.button`
-  color: #404b52;
-  background: #f5f5f5;
+  background: ${(props) => (props.disabled ? "#d3d3d3" : "#f5f5f5")};
+  color: ${(props) => (props.disabled ? "#a9a9a9" : "#404b52")};
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
+  border: 1px solid #eee;
   padding: 6px 9px;
   border-radius: 4px;
-  border: 1px solid #eee;
   font-size: 12px;
   font-weight: 500;
   line-height: 100%; /* 12px */
   letter-spacing: -0.12px;
-  cursor: pointer;
 
   &:hover {
-    color: #fff;
-    background: #5932ea;
+    color: ${(props) => (props.disabled ? "#a9a9a9" : " #fff")};
+    background: ${(props) => (props.disabled ? "#d3d3d3" : "#5932ea")};
+    border: 1px solid ${(props) => (props.disabled ? "#eee" : " #5932ea")};
     border-radius: 4px;
-    border: 1px solid #5932ea;
   }
 `;
