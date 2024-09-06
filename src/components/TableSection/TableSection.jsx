@@ -90,7 +90,7 @@ export default function TableSection({ data, onHandle, currentPage }) {
       </Table>
 
       <BottomSection>
-        <BottomText>Showing data 1 to 8 of 256K entries</BottomText>
+        <BottomText>{`Showing data ${currentPage} to 13 of 256K entries`}</BottomText>
         <BottomList>
           <li>
             <Button onClick={prevPage} disabled={currentPage === 1}>
@@ -99,7 +99,10 @@ export default function TableSection({ data, onHandle, currentPage }) {
           </li>
           {[1, 2, 3, 4].map((pageNumber) => (
             <li key={pageNumber}>
-              <Button onClick={() => handlePageClick(pageNumber)}>
+              <Button
+                onClick={() => handlePageClick(pageNumber)}
+                isActive={pageNumber === currentPage ? "active" : ""}
+              >
                 {pageNumber}
               </Button>
             </li>
@@ -108,10 +111,15 @@ export default function TableSection({ data, onHandle, currentPage }) {
             <span>...</span>
           </li>
           <li>
-            <Button>40</Button>
+            <Button
+              onClick={() => handlePageClick(13)}
+              isActive={13 === currentPage ? "active" : ""}
+            >
+              13
+            </Button>
           </li>
           <li>
-            <Button onClick={nextPage}>
+            <Button onClick={nextPage} disabled={currentPage === 13}>
               <FaChevronRight width="8px" height="12px" />
             </Button>
           </li>
