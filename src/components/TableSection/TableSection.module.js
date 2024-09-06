@@ -110,3 +110,22 @@ export const TableItem = styled.td`
   padding-bottom: 24px;
   border-bottom: 1px solid #eee;
 `;
+
+export const StatusItem = styled.td`
+  margin-top: 20px;
+  width: 80px;
+  padding: 4px 12px;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.14px;
+  border-radius: 4px;
+  align-items: center;
+  gap: 10px;
+  background-color: ${(props) =>
+    props.status === "Active" ? "rgba(22, 192, 152, 0.38)" : "#FFC5C5"};
+  color: ${(props) => (props.status === "Active" ? "#008767" : "#DF0404")};
+  border: ${(props) =>
+    props.status === "Active" ? "1px solid #00B087" : "1px solid #DF0404;"};
+`;

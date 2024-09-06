@@ -10,6 +10,7 @@ import {
   IconWrapper,
   Input,
   InputContainer,
+  StatusItem,
   Table,
   TableHead,
   TableItem,
@@ -63,7 +64,7 @@ export default function TableSection({ data }) {
               <TableItem>{item.phone}</TableItem>
               <TableItem>{item.email}</TableItem>
               <TableItem>{item.country}</TableItem>
-              <TableItem>{item.status}</TableItem>
+              <StatusItem status={item.status}>{item.status}</StatusItem>
             </tr>
           ))}
         </tbody>
