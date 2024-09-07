@@ -5,6 +5,7 @@ import TopBar from "../../components/TopBar/TopBar";
 import { Container } from "./Customers.module";
 import { useEffect, useState } from "react";
 import Spinner from "../../components/utils/Spinner";
+import { fetchQuery } from "../../components/utils/api";
 
 export default function Customers() {
   const [allUsers, setAllUsers] = useState([]); // всі користувачі
@@ -12,18 +13,20 @@ export default function Customers() {
   const [page, setPage] = useState(1); //сторінки при пагінації
   const [searchQuery, setSearchQuery] = useState(""); // пошуковий запит
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     async function fetchUsers() {
       try {
         setLoading(true);
-        const response = await axios.get(
-          "https://66daaa9ef47a05d55be57f7c.mockapi.io/users"
-        );
-        setAllUsers(response.data); // збереження всіх користувачів
-        setFilteredUsers(response.data); // початкове відображення всіх користувачів
-        // } catch (error) {
-        // тут помилка
+
+        const data = await fetchQuery();
+
+        setAllUsers(data); // збереження всіх користувачів
+        setFilteredUsers(data); // початкове відображення всіх користувачів
+      } catch (error) {
+        console.error("Error fetching users:", error);
+        setError(true);
       } finally {
         setLoading(false);
       }
@@ -52,22 +55,22 @@ export default function Customers() {
 
   return (
     <Container>
-      {loading ? (
-        <Spinner wrapperStyle={{ marginRight: "450px" }} />
-      ) : (
+      {loading && <Spinner />}
+
+      {error && (
+        <p>Whoops, something went wrong! Please try reloading this page!</p>
+      )}
+      {allUsers.length > 0 && (
         <>
           <TopBar onSearch={setSearchQuery} />
           <Statistic users={allUsers} />
-
-          {allUsers.length > 0 && (
-            <TableSection
-              data={paginatedUsers}
-              allUsers={allUsers}
-              onHandle={handlePageChange}
-              currentPage={page}
-              onSearch={setSearchQuery}
-            />
-          )}
+          <TableSection
+            data={paginatedUsers}
+            allUsers={allUsers}
+            onHandle={handlePageChange}
+            currentPage={page}
+            onSearch={setSearchQuery}
+          />
         </>
       )}
     </Container>
