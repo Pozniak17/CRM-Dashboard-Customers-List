@@ -1,6 +1,6 @@
-import { Button, Title, Wrapper } from "./PopUp.module";
+import { Button, Title, Wrapper } from "./Banner.module";
 
-export default function PopUp() {
+export default function Banner() {
   return (
     <Wrapper>
       <Title>Upgrade to PRO to get access all Features!</Title>
