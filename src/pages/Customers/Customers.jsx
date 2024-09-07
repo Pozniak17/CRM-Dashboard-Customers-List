@@ -4,20 +4,29 @@ import TableSection from "../../components/TableSection/TableSection/TableSectio
 import TopBar from "../../components/TopBar/TopBar";
 import { Container } from "./Customers.module";
 import { useEffect, useState } from "react";
+import Spinner from "../../components/utils/Spinner";
 
 export default function Customers() {
   const [allUsers, setAllUsers] = useState([]); // всі користувачі
   const [filteredUsers, setFilteredUsers] = useState([]); // відфільтровані користувачі
   const [page, setPage] = useState(1); //сторінки при пагінації
   const [searchQuery, setSearchQuery] = useState(""); // пошуковий запит
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetchUsers() {
-      const response = await axios.get(
-        "https://66daaa9ef47a05d55be57f7c.mockapi.io/users"
-      );
-      setAllUsers(response.data); // збереження всіх користувачів
-      setFilteredUsers(response.data); // початкове відображення всіх користувачів
+      try {
+        setLoading(true);
+        const response = await axios.get(
+          "https://66daaa9ef47a05d55be57f7c.mockapi.io/users"
+        );
+        setAllUsers(response.data); // збереження всіх користувачів
+        setFilteredUsers(response.data); // початкове відображення всіх користувачів
+        // } catch (error) {
+        // тут помилка
+      } finally {
+        setLoading(false);
+      }
     }
 
     fetchUsers();
@@ -43,15 +52,24 @@ export default function Customers() {
 
   return (
     <Container>
-      <TopBar onSearch={setSearchQuery} />
-      <Statistic users={allUsers} />
-      <TableSection
-        data={paginatedUsers}
-        allUsers={allUsers}
-        onHandle={handlePageChange}
-        currentPage={page}
-        onSearch={setSearchQuery}
-      />
+      {loading ? (
+        <Spinner wrapperStyle={{ marginRight: "450px" }} />
+      ) : (
+        <>
+          <TopBar onSearch={setSearchQuery} />
+          <Statistic users={allUsers} />
+
+          {allUsers.length > 0 && (
+            <TableSection
+              data={paginatedUsers}
+              allUsers={allUsers}
+              onHandle={handlePageChange}
+              currentPage={page}
+              onSearch={setSearchQuery}
+            />
+          )}
+        </>
+      )}
     </Container>
   );
 }
