@@ -1,12 +1,8 @@
 import { FaChevronDown } from "react-icons/fa";
-import { FaChevronLeft } from "react-icons/fa6";
-import { FaChevronRight } from "react-icons/fa6";
+
 import {
   AccentFirst,
   AccentSecond,
-  BottomList,
-  BottomSection,
-  BottomText,
   SortButton,
   Container,
   FilterWrapper,
@@ -18,15 +14,16 @@ import {
   Title,
   TitleWrapper,
   Wrapper,
-  Button,
 } from "./TableSection.module";
-import FormSection from "../FormSection/FormSection";
+import FormSection from "../../FormSection/FormSection";
+import PagitationSection from "../PagitationSection/PagitationSection";
 
 export default function TableSection({
   data,
   onHandle,
   currentPage,
   onSearch,
+  allUsers,
 }) {
   const nextPage = () => {
     onHandle((prevState) => prevState + 1);
@@ -87,42 +84,14 @@ export default function TableSection({
         </tbody>
       </Table>
 
-      <BottomSection>
-        <BottomText>{`Showing data ${currentPage} to 13 of 256K entries`}</BottomText>
-        <BottomList>
-          <li>
-            <Button onClick={prevPage} disabled={currentPage === 1}>
-              <FaChevronLeft width="8px" height="12px" />
-            </Button>
-          </li>
-          {[1, 2, 3, 4].map((pageNumber) => (
-            <li key={pageNumber}>
-              <Button
-                onClick={() => handlePageClick(pageNumber)}
-                $isActive={pageNumber === currentPage ? "active" : ""}
-              >
-                {pageNumber}
-              </Button>
-            </li>
-          ))}
-          <li>
-            <span>...</span>
-          </li>
-          <li>
-            <Button
-              onClick={() => handlePageClick(13)}
-              $isActive={13 === currentPage ? "active" : ""}
-            >
-              13
-            </Button>
-          </li>
-          <li>
-            <Button onClick={nextPage} disabled={currentPage === 13}>
-              <FaChevronRight width="8px" height="12px" />
-            </Button>
-          </li>
-        </BottomList>
-      </BottomSection>
+      {/* тут секція пагінації */}
+      <PagitationSection
+        currentPage={currentPage}
+        allUsers={allUsers}
+        nextPage={nextPage}
+        prevPage={prevPage}
+        handlePageClick={handlePageClick}
+      />
     </Container>
   );
 }

@@ -1,6 +1,6 @@
 import axios from "axios";
 import Statistic from "../../components/Statistic/Statistic";
-import TableSection from "../../components/TableSection/TableSection";
+import TableSection from "../../components/TableSection/TableSection/TableSection";
 import TopBar from "../../components/TopBar/TopBar";
 import { Container } from "./Customers.module";
 import { useEffect, useState } from "react";
@@ -44,9 +44,10 @@ export default function Customers() {
   return (
     <Container>
       <TopBar onSearch={setSearchQuery} />
-      <Statistic />
+      <Statistic users={allUsers} />
       <TableSection
         data={paginatedUsers}
+        allUsers={allUsers}
         onHandle={handlePageChange}
         currentPage={page}
         onSearch={setSearchQuery}

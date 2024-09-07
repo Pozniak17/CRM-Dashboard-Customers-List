@@ -24,7 +24,10 @@ import Ellipse3 from "../../assets/Ellipse3.svg";
 import Ellipse4 from "../../assets/Ellipse4.svg";
 import Ellipse5 from "../../assets/Ellipse5.svg";
 
-export default function Statistic() {
+export default function Statistic({ users }) {
+  const customers = users.length;
+  const activeUsers = users.filter((user) => user.status === "Active").length;
+
   return (
     <Container>
       <List>
@@ -34,7 +37,7 @@ export default function Statistic() {
           </ImgWrapper>
           <div>
             <Title>Total Customers</Title>
-            <MainText>5,423</MainText>
+            <MainText>{customers}</MainText>
             <TextWrapper>
               <FaArrowUp height="20px" color="#00AC4F" />
               <Text>
@@ -51,7 +54,7 @@ export default function Statistic() {
 
           <div>
             <Title>Members</Title>
-            <MainText>1,893 </MainText>
+            <MainText>17 </MainText>
             <TextWrapper>
               <FaArrowDown height="20px" color="#D0004B" />
               <Text>
@@ -67,7 +70,7 @@ export default function Statistic() {
           </ImgWrapper>
           <div>
             <Title>Active Now</Title>
-            <MainText>189</MainText>
+            <MainText>{activeUsers}</MainText>
 
             <IconList>
               <IconItem>
