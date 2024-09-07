@@ -50,7 +50,7 @@ export default function TableSection({
 
         <FilterWrapper>
           {/* Компонент форми */}
-          <FormSection onSearch={onSearch} />
+          <FormSection onSearch={onSearch} $background="#F9FBFF" />
 
           <SortButton>
             <AccentFirst>Short by : </AccentFirst>

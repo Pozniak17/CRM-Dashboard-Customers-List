@@ -14,7 +14,8 @@ export const IconWrapper = styled.div`
 
 export const Input = styled.input`
   background-color: ${(props) => props.$background};
-  /* background: #f9fbff; */
+  box-shadow: ${(props) =>
+    props.$boxShadow ? "0px 10px 60px 0px rgba(226, 236, 249, 0.50)" : "none"};
   width: 216px;
   height: 38px;
   padding: 10px 8px 10px 40px;
