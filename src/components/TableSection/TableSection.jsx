@@ -82,7 +82,7 @@ export default function TableSection({ data, onHandle, currentPage }) {
               <TableItem>{item.email}</TableItem>
               <TableItem>{item.country}</TableItem>
               <TableItem>
-                <StatusItem status={item.status}>{item.status}</StatusItem>
+                <StatusItem $status={item.status}>{item.status}</StatusItem>
               </TableItem>
             </tr>
           ))}

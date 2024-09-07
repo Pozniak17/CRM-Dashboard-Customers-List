@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.section`
   padding-left: 38px;
   padding-right: 44px;
-  outline: 1px solid red;
   border-radius: 18px;
   background-color: #fff;
   width: 968px;
@@ -56,7 +55,7 @@ export const Input = styled.input`
   width: 216px;
   height: 38px;
   padding: 10px 8px 10px 40px;
-  color: #b5b7c0;
+  /* color: #b5b7c0; */
   background: #f9fbff;
   border-radius: 10px;
   border: none;
@@ -127,10 +126,10 @@ export const StatusItem = styled.span`
   border-radius: 4px;
   align-items: center;
   background-color: ${(props) =>
-    props.status === "Active" ? "rgba(22, 192, 152, 0.38)" : "#FFC5C5"};
-  color: ${(props) => (props.status === "Active" ? "#008767" : "#DF0404")};
+    props.$status === "Active" ? "rgba(22, 192, 152, 0.38)" : "#FFC5C5"};
+  color: ${(props) => (props.$status === "Active" ? "#008767" : "#DF0404")};
   border: ${(props) =>
-    props.status === "Active" ? "1px solid #00B087" : "1px solid #DF0404;"};
+    props.$status === "Active" ? "1px solid #00B087" : "1px solid #DF0404;"};
 `;
 
 export const BottomSection = styled.div`
