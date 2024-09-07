@@ -1,14 +1,17 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import SideBar from "./components/Sidebar/SideBar/SideBar.jsx";
 import { Layout } from "./App.module";
-import Customers from "./pages/Customers/Customers";
+import { lazy } from "react";
+
+const Customers = lazy(() => import("./pages/Customers/Customers"));
 
 function App() {
   return (
     <Layout>
       <SideBar />
       <Routes>
-        <Route path="/" element={<div>Dashboard</div>} />
+        {/* перенаправлення з / на адресу "/customers" */}
+        <Route path="/" element={<Navigate to="/customers" />} />
         <Route path="/product" element={<div>Product</div>} />
         <Route path="/customers" element={<Customers />} />
         <Route path="/income" element={<div>Income</div>} />

@@ -1,4 +1,3 @@
-import axios from "axios";
 import Statistic from "../../components/Statistic/Statistic";
 import TableSection from "../../components/TableSection/TableSection/TableSection";
 import TopBar from "../../components/TopBar/TopBar";
