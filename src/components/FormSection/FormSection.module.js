@@ -13,7 +13,8 @@ export const IconWrapper = styled.div`
 `;
 
 export const Input = styled.input`
-  background: #f9fbff;
+  background-color: ${(props) => props.$background};
+  /* background: #f9fbff; */
   width: 216px;
   height: 38px;
   padding: 10px 8px 10px 40px;

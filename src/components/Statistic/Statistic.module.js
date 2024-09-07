@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
+  background-color: #fff;
+  filter: drop-shadow(0px 10px 60px rgba(226, 236, 249, 0.5));
   margin-bottom: 40px;
   width: 968px;
   padding-top: 32px;
   height: 151px;
-  background-color: #fff;
   border-radius: 18px;
-
-  filter: drop-shadow(0px 10px 60px rgba(226, 236, 249, 0.5));
 `;
 
 export const List = styled.ul`

@@ -6,7 +6,7 @@ export default function TopBar({ onSearch }) {
     <TopWrapper>
       <Title>Hello Evano👋🏼,</Title>
 
-      <FormSection onSearch={onSearch} />
+      <FormSection onSearch={onSearch} $background="#f9fbff" />
     </TopWrapper>
   );
 }

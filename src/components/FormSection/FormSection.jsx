@@ -2,7 +2,7 @@ import { GoSearch } from "react-icons/go";
 import { IconWrapper, Input, InputContainer } from "./FormSection.module";
 import { useState } from "react";
 
-export default function FormSection({ onSearch }) {
+export default function FormSection({ onSearch, $background }) {
   const [inputValue, setInputValue] = useState("");
 
   const handleChange = (evt) => {
@@ -21,6 +21,7 @@ export default function FormSection({ onSearch }) {
         value={inputValue}
         onChange={handleChange}
         placeholder="Search"
+        background={$background}
       />
     </InputContainer>
   );
