@@ -73,3 +73,17 @@ export const Accent = styled.span`
 export const Wrapper = styled.li`
   display: flex;
 `;
+
+export const IconList = styled.ul`
+  list-style: none;
+  display: flex;
+`;
+
+export const IconItem = styled.li`
+  border-radius: 50%;
+  margin-left: -10px;
+`;
+
+export const ImgIcon = styled.img`
+  z-index: 1;
+`;

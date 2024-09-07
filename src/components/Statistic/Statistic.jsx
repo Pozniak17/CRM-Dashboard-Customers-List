@@ -3,7 +3,10 @@ import { FaArrowDown } from "react-icons/fa";
 import {
   Accent,
   Container,
+  IconItem,
+  IconList,
   Img,
+  ImgIcon,
   ImgWrapper,
   List,
   MainText,
@@ -15,6 +18,11 @@ import {
 import Customers from "../../assets/customers.svg";
 import Members from "../../assets/members.svg";
 import Monitor from "../../assets/monitor.svg";
+import Ellipse1 from "../../assets/Ellipse1.svg";
+import Ellipse2 from "../../assets/Ellipse2.svg";
+import Ellipse3 from "../../assets/Ellipse3.svg";
+import Ellipse4 from "../../assets/Ellipse4.svg";
+import Ellipse5 from "../../assets/Ellipse5.svg";
 
 export default function Statistic() {
   return (
@@ -60,7 +68,25 @@ export default function Statistic() {
           <div>
             <Title>Active Now</Title>
             <MainText>189</MainText>
-            <div>{/* <FaArrowUp /> */}</div>
+            <div>
+              <IconList>
+                <IconItem>
+                  <ImgIcon src={Ellipse1} alt="Woman 1" />
+                </IconItem>
+                <IconItem>
+                  <ImgIcon src={Ellipse2} alt="Woman 2" />
+                </IconItem>
+                <IconItem>
+                  <ImgIcon src={Ellipse3} alt="Woman 3" />
+                </IconItem>
+                <IconItem>
+                  <ImgIcon src={Ellipse4} alt="Woman 4" />
+                </IconItem>
+                <IconItem>
+                  <ImgIcon src={Ellipse5} alt="Woman 5" />
+                </IconItem>
+              </IconList>
+            </div>
           </div>
         </Wrapper>
       </List>
