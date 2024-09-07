@@ -25,8 +25,8 @@ import Ellipse4 from "../../assets/Ellipse4.svg";
 import Ellipse5 from "../../assets/Ellipse5.svg";
 
 export default function Statistic({ users }) {
-  const customers = users.length;
-  const activeUsers = users.filter((user) => user.status === "Active").length;
+  const customers = users?.length;
+  const activeUsers = users?.filter((user) => user.status === "Active").length;
 
   return (
     <Container>

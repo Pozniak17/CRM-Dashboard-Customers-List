@@ -14,9 +14,10 @@ export default function PagitationSection({
   handlePageClick,
   allUsers,
 }) {
+  const members = allUsers.length;
   return (
     <PaginationSection>
-      <BottomText>{`Showing data ${currentPage} to 13 of ${allUsers.length} entries`}</BottomText>
+      <BottomText>{`Showing data ${currentPage} to 13 of ${members} entries`}</BottomText>
       <BottomList>
         <li>
           <Button onClick={prevPage} disabled={currentPage === 1}>
