@@ -75,6 +75,7 @@ export const Wrapper = styled.li`
 `;
 
 export const IconList = styled.ul`
+  margin-top: 3px;
   list-style: none;
   display: flex;
 `;

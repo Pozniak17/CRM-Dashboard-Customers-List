@@ -68,25 +68,24 @@ export default function Statistic() {
           <div>
             <Title>Active Now</Title>
             <MainText>189</MainText>
-            <div>
-              <IconList>
-                <IconItem>
-                  <ImgIcon src={Ellipse1} alt="Woman 1" />
-                </IconItem>
-                <IconItem>
-                  <ImgIcon src={Ellipse2} alt="Woman 2" />
-                </IconItem>
-                <IconItem>
-                  <ImgIcon src={Ellipse3} alt="Woman 3" />
-                </IconItem>
-                <IconItem>
-                  <ImgIcon src={Ellipse4} alt="Woman 4" />
-                </IconItem>
-                <IconItem>
-                  <ImgIcon src={Ellipse5} alt="Woman 5" />
-                </IconItem>
-              </IconList>
-            </div>
+
+            <IconList>
+              <IconItem>
+                <ImgIcon src={Ellipse1} alt="Woman 1" />
+              </IconItem>
+              <IconItem>
+                <ImgIcon src={Ellipse2} alt="Woman 2" />
+              </IconItem>
+              <IconItem>
+                <ImgIcon src={Ellipse3} alt="Woman 3" />
+              </IconItem>
+              <IconItem>
+                <ImgIcon src={Ellipse4} alt="Woman 4" />
+              </IconItem>
+              <IconItem>
+                <ImgIcon src={Ellipse5} alt="Woman 5" />
+              </IconItem>
+            </IconList>
           </div>
         </Wrapper>
       </List>
