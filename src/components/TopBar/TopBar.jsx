@@ -1,23 +1,12 @@
-import { GoSearch } from "react-icons/go";
-import {
-  IconWrapper,
-  Input,
-  InputContainer,
-  Title,
-  TopWrapper,
-} from "./TopBar.module";
+import { Title, TopWrapper } from "./TopBar.module";
+import FormSection from "../FormSection/FormSection";
 
-export default function TopBar() {
+export default function TopBar({ onSearch }) {
   return (
     <TopWrapper>
       <Title>Hello Evano👋🏼,</Title>
 
-      <InputContainer>
-        <IconWrapper>
-          <GoSearch size="24px" color="#7E7E7E" />
-        </IconWrapper>
-        <Input type="text" placeholder="Search" />
-      </InputContainer>
+      <FormSection onSearch={onSearch} />
     </TopWrapper>
   );
 }

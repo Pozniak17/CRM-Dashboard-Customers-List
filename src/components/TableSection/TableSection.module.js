@@ -39,30 +39,6 @@ export const Text = styled.p`
   letter-spacing: -0.14px;
 `;
 
-export const InputContainer = styled.div`
-  position: relative;
-`;
-
-export const IconWrapper = styled.div`
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 7px 8px;
-  pointer-events: none; /* Щоб іконка не заважала вводити текст */
-`;
-
-export const Input = styled.input`
-  width: 216px;
-  height: 38px;
-  padding: 10px 8px 10px 40px;
-  /* color: #b5b7c0; */
-  background: #f9fbff;
-  border-radius: 10px;
-  border: none;
-  font-size: 12px;
-  letter-spacing: -0.12px;
-`;
-
 export const SortButton = styled.button`
   display: flex;
   justify-content: space-around;

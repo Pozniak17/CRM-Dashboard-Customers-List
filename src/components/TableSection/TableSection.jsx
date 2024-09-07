@@ -1,4 +1,3 @@
-import { GoSearch } from "react-icons/go";
 import { FaChevronDown } from "react-icons/fa";
 import { FaChevronLeft } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa6";
@@ -11,9 +10,6 @@ import {
   SortButton,
   Container,
   FilterWrapper,
-  IconWrapper,
-  Input,
-  InputContainer,
   StatusItem,
   Table,
   TableHead,
@@ -24,8 +20,14 @@ import {
   Wrapper,
   Button,
 } from "./TableSection.module";
+import FormSection from "../FormSection/FormSection";
 
-export default function TableSection({ data, onHandle, currentPage }) {
+export default function TableSection({
+  data,
+  onHandle,
+  currentPage,
+  onSearch,
+}) {
   const nextPage = () => {
     onHandle((prevState) => prevState + 1);
   };
@@ -47,12 +49,8 @@ export default function TableSection({ data, onHandle, currentPage }) {
         </TitleWrapper>
 
         <FilterWrapper>
-          <InputContainer>
-            <IconWrapper>
-              <GoSearch size="24px" color="#7E7E7E" />
-            </IconWrapper>
-            <Input type="text" placeholder="Search" />
-          </InputContainer>
+          {/* Компонент форми */}
+          <FormSection onSearch={onSearch} />
 
           <SortButton>
             <AccentFirst>Short by : </AccentFirst>
